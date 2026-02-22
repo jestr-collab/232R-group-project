@@ -8,28 +8,63 @@
 
 ## Running on SDSC Expanse
 
-### First-Time Setup (run once after login)
+### 1. First-Time Setup (run once after login)
 
 ```bash
 ln -sf /expanse/lustre/projects/uci157/$USER
 ln -sf /expanse/lustre/projects/uci157/esolares
 ```
 
-### Submit the Job
+### 2. Get the Repo
+
+**First time:**
+```bash
+git clone https://github.com/jestr-collab/232R-group-project.git
+cd 232R-group-project
+```
+
+**Already cloned:**
+```bash
+cd 232R-group-project
+git pull origin main
+```
+
+### 3. Submit the Job
+
+The SLURM script `run_pvdn_eda.sh` is pre-configured with the correct account, partition, cores, and memory. Simply run:
 
 ```bash
 sbatch run_pvdn_eda.sh
 ```
 
-### Monitor the Job
+| SLURM Setting   | Value            |
+|-----------------|------------------|
+| Account         | `TG-SEE260003`   |
+| Partition       | `debug`          |
+| Cores           | 8                |
+| Memory          | 128 GB           |
+| Wall Time       | 30 min           |
+| Output          | `logs/pvdn_<jobid>.out` |
+
+The executed notebook will be saved as `group_project_p2_executed.ipynb`.
+
+### 4. Monitor the Job
 
 ```bash
+# Check job status
 squeue -u $USER
+
+# Stream live output (replace <job_id> with your job ID)
 tail -f logs/pvdn_<job_id>.out
+
+# Check efficiency after completion
 seff <job_id>
+
+# Full accounting info
+sacct -j <job_id> --format=JobID,State,ExitCode,Elapsed,MaxRSS
 ```
 
-### Cancel if Needed
+### 5. Cancel if Needed
 
 ```bash
 scancel <job_id>

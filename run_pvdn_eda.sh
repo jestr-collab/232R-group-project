@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=pvdn_eda
 #SBATCH --account=TG-SEE260003
-#SBATCH --partition=shared
+#SBATCH --partition=debug
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=128G
-#SBATCH --time=02:00:00
+#SBATCH --time=00:30:00
 #SBATCH --output=logs/pvdn_%j.out
 #SBATCH --error=logs/pvdn_%j.err
 
