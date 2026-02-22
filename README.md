@@ -46,30 +46,6 @@ sbatch run_pvdn_eda.sh
 | Wall Time       | 30 min           |
 | Output          | `logs/pvdn_<jobid>.out` |
 
-The executed notebook will be saved as `group_project_p2_executed.ipynb`.
-
-### 4. Monitor the Job
-
-```bash
-# Check job status
-squeue -u $USER
-
-# Stream live output (replace <job_id> with your job ID)
-tail -f logs/pvdn_<job_id>.out
-
-# Check efficiency after completion
-seff <job_id>
-
-# Full accounting info
-sacct -j <job_id> --format=JobID,State,ExitCode,Elapsed,MaxRSS
-```
-
-### 5. Cancel if Needed
-
-```bash
-scancel <job_id>
-```
-
 ---
 
 ## SDSC Expanse Environment Setup
@@ -122,7 +98,7 @@ The driver is kept at 2 GB since it only coordinates the job and does not proces
 ### Data Location on Expanse
 
 ```
-DATA_ROOT = /expanse/lustre/projects/uci157/kkravchenko
+DATA_ROOT = /expanse/lustre/projects/uci157/kkravchenko/provident-vehicle-detection-at-night-pvdn
 ```
 
 The PVDN dataset was stored on the Lustre parallel filesystem for high-throughput I/O during Spark reads.
