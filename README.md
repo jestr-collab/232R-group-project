@@ -105,6 +105,7 @@ The PVDN dataset was stored on the Lustre parallel filesystem for high-throughpu
 
 ### Spark UI - Multiple Executors Active During Data Loading
 
-![Spark UI Executors](spark_ui_executors.png)
+![Spark UI Executors](<img width="1461" height="657" alt="image" src="https://github.com/user-attachments/assets/376fa0e4-47a5-4c5d-9878-787777de06c6" />
+)
 
 *Screenshot showing 7 executors actively processing data during the initial JSON annotation load stage.*
