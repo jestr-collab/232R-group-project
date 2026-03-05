@@ -16,7 +16,7 @@ module load singularitypro
 
 singularity exec \
     --bind /expanse/lustre/projects/uci157 \
-    ~/esolares/spark_py_latest_jupyter_dsc232r.sif \
+    ~/esolares/singularity_images/spark_py_latest_jupyter_dsc232r.sif \
     jupyter nbconvert \
         --to notebook \
         --execute milestone_3.ipynb \
