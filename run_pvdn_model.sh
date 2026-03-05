@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=pvdn_model
 #SBATCH --account=TG-SEE260003
-#SBATCH --partition=debug
+#SBATCH --partition=shared
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=8
