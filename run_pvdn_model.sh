@@ -14,6 +14,9 @@ mkdir -p logs
 
 module load singularitypro
 
+# Unset local JAVA_HOME so the container uses its own Java installation
+unset JAVA_HOME
+
 singularity exec \
     --bind /expanse/lustre/projects/uci157 \
     ~/esolares/singularity_images/spark_py_latest_jupyter_dsc232r.sif \
